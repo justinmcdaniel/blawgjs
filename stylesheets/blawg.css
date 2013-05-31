@@ -25,3 +25,14 @@ a.blawg-tag {
 a.blawg-display-all {
   cursor: pointer;
 }
+
+.blawg-pagination {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+  .blawg-pagination a{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
