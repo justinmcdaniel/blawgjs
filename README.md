@@ -13,3 +13,4 @@ Supports pagination. Every 3 posts makes one page, which is hardcoded.
 - [ ] Make blog posts only show certain amount of text, then do read more for full post
 - [ ] Add ability to link directly to post, probably query string variables and make guid for posts
 - [ ] Make pagination and blog posts size variable depending on parameters passed into Blawg
+- [ ] Add underline to links in blawg.css
