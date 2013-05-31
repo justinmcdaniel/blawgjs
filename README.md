@@ -5,7 +5,7 @@ Lightweight Javascript Blog Engine
 
 Gets blawg posts from posts/post.json. Currently all posts are contained in the same file.
 
-Supports pagination. Every 3 pages makes one page, which is hardcoded.
+Supports pagination. Every 3 posts makes one page, which is hardcoded.
 
 - [x] Reverse blog posts, make newest first
 - [x] Add pagination
