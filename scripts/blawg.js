@@ -17,7 +17,6 @@ $.getJSON('posts/posts.json', function(json) {
     var p = Math.floor(i / 3) + 1;
     pagination += '<a class="blawg-tag" data-blawg-tag="blawg-page-' + p + '">' + p + '</a>';
   }
-  console.log(page);
   pagination += '</section>';
   $('#blawg').append(pagination);
   
