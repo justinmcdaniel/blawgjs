@@ -7,6 +7,14 @@ Gets blawg posts from posts/post.json. Currently all posts are contained in the 
 
 Supports pagination. Every 3 posts makes one page, which is hardcoded.
 
+
+-[x] sdfsdfsdf
+
+- [x] sadfjskldfj
+- sdkjflksdf
+- sss
+
+
 - [x] Reverse blog posts, make newest first
 - [x] Add pagination
 - [ ] Make blog posts only show certain amount of text, then do read more for full post
