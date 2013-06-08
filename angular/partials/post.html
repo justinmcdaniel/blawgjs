@@ -1,0 +1,9 @@
+<section class="blawg-post-wrapper">
+	<span class="blawg-title">{{data.title}}</span>
+	<span class="blawg-author">
+		Posted {{data.timestamp}} by {{data.author}} in
+		<!-- <a class="blawg-tag" ng-repeat="tag in data.tags" data-blawg-tag="{{tag}}">{{tag + ((tag == data.tags[data.tags.length - 1]) ? '' :  ', ')}}</a> -->
+		<a class="blawg-tag" ng-repeat="tag in data.tags" data-blawg-tag="{{tag}}">{{tag + ({true:'', false: ', '}[$last])}}</a>
+	</span>
+	<div class="blawg-post" ng-bind-html-unsafe="data.post"></div>
+</section>
