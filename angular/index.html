@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+	  <title>Blawg.js</title>
+	  <link rel="stylesheet" href="stylesheets/blawg.css">
+	</head>
+	<body>
+
+
+	  <div ng-controller="BlawgPostCtrl">
+	  	<a href="" ng-click="showPage(0)">Show all posts</a>
+
+	  	<ul>
+	  		<li ng-repeat="post in displayedPosts()">
+	  			{{post.title}}
+	  		</li>
+	  	</ul>
+
+	  	<section class="blawg-pagination">
+  		 	<ul>
+				<li ng-repeat="page in pageIndices()">
+	  				<a href="" class="blawg-tag" ng-click="showPage({{page}})">{{page}}</a>
+	  			</li>
+	  		</ul>
+	  		
+	  	</section>
+	  </div>
+
+
+	  <script src="http://code.jquery.com/jquery-latest.js"></script>
+	  <!-- include angularJS -->
+	  <script src="scripts/blawg.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	</body>
+</html>

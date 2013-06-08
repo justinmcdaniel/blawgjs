@@ -1,0 +1,48 @@
+.blawg-title {
+  display: block;
+  font-size: 1.5em;
+}
+
+.blawg-author {
+  display: block;
+  font-size: .75em;
+}
+
+.blawg-post {
+  display: block;
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+.blawg-post-wrapper {
+  margin: 1em 0; 
+}
+
+a.blawg-tag {
+  cursor: pointer;
+}
+
+a.blawg-display-all {
+  cursor: pointer;
+}
+
+.blawg-pagination {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+  
+  .blawg-pagination ul a{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .blawg-pagination li {
+    float: left;
+  }
+
+  .blawg-pagination ul {
+    list-style-type: none;
+    margin: auto;
+  }
