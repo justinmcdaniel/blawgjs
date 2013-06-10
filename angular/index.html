@@ -11,19 +11,23 @@
 				<!-- <a href="" ng-click="showPage(0)">Show all posts</a> -->
 
 				<ul>
-					<li ng-repeat="post in blawgPosts">
+					<li ng-repeat="post in blawgPosts | orderBy:'-timestamp' | startFrom:currentPage*pageSize | limitTo:pageSize">
 						<post data="post"><post>
 					</li>
 				</ul>
 
-				<!-- <section class="blawg-pagination">
-				 	<ul>
-					<li ng-repeat="page in pageIndices()">
-							<a href="" class="blawg-tag" ng-click="showPage({{page}})">{{page}}</a>
-						</li>
-					</ul>
-					
-				</section> -->
+				<!-- todo: Using an include to pull in the partial breaks the loading of the results for the new page. A quick google reveals this is due to a new child scope being created by the ng-include. It was way over my head for the moment so I abandoned the pursuit for now. 
+				
+				<div ng-include src="'partials/pager.html'"></div> 
+
+				-->
+				<button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+				    Previous
+				</button>
+				{{currentPage+1}}/{{numberOfPages()}}
+				<button ng-disabled="currentPage >= blawgPosts.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+				    Next
+				</button>
 			</div>
 		</div>
 

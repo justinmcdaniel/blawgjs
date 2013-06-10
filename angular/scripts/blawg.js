@@ -1,6 +1,6 @@
-var app = angular.module('blawgApp', []);
+var blawgApp = angular.module('blawgApp', []);
 
-app.factory('blawgPosts', function($http) {
+blawgApp.factory('blawgPosts', function($http) {
   return {
     getPosts: function() {
       return $http.post('posts/posts.json', {});
@@ -8,15 +8,27 @@ app.factory('blawgPosts', function($http) {
   }
 });
 
-app.controller("BlawgPostCtrl", function($scope, blawgPosts) {
+blawgApp.controller("BlawgPostCtrl", function($scope, blawgPosts) {
   $scope.blawgPosts = [];
   $scope.handleSuccess = function(json) {
     $scope.blawgPosts = json.posts;
   }
+
+  //***        BEGIN COPIED CODE        ***//
+  //taken from: http://jsfiddle.net/2ZzZB/56/
+  $scope.currentPage = 0;
+  $scope.pageSize = 3;
+
+  $scope.numberOfPages = function() {
+    return Math.ceil($scope.blawgPosts.length / $scope.pageSize);                
+  }
+  //***         END COPIED CODE         ***//
+
+  // Init...
   blawgPosts.getPosts().success($scope.handleSuccess);
 });
 
-app.directive("post", function() { 
+blawgApp.directive("post", function() { 
   return {
     restrict: 'E',
     scope: {
@@ -25,3 +37,15 @@ app.directive("post", function() {
     template: '<div ng-include src="\'partials/post.html\'"></div>'
   }
 });
+
+//***        BEGIN COPIED CODE        ***//
+//taken from: http://jsfiddle.net/2ZzZB/56/
+
+blawgApp.filter('startFrom', function() {
+  return function(input, start) {
+      start = +start; //parse to int
+      return input.slice(start);
+  }
+});
+
+//***         END COPIED CODE         ***//
